@@ -1,4 +1,4 @@
-const CACHE='polski-a1-v1';
+const CACHE='polski-a1-v2';
 const FILES=['./','./index.html','./app.js','./data.js','./manifest.json','./icon.svg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));

@@ -248,5 +248,70 @@ Nie mówię dobrze po polsku.|I don’t speak Polish well.|我的波兰语说得
 Czy możemy porozmawiać?|Can we talk?|我们可以聊聊吗？
 Do zobaczenia!|See you!|再见！
 Miłego dnia!|Have a nice day!|祝你今天愉快。`.trim();
+const EXTRA=`数字|Zero|Zero|零
+数字|Sześć|Six|六
+数字|Siedem|Seven|七
+数字|Osiem|Eight|八
+数字|Dziewięć|Nine|九
+数字|Jedenaście|Eleven|十一
+数字|Dwanaście|Twelve|十二
+数字|Trzynaście|Thirteen|十三
+数字|Czternaście|Fourteen|十四
+数字|Piętnaście|Fifteen|十五
+数字|Szesnaście|Sixteen|十六
+数字|Siedemnaście|Seventeen|十七
+数字|Osiemnaście|Eighteen|十八
+数字|Dziewiętnaście|Nineteen|十九
+数字|Dwadzieścia|Twenty|二十
+数字|Trzydzieści|Thirty|三十
+数字|Czterdzieści|Forty|四十
+数字|Pięćdziesiąt|Fifty|五十
+数字|Sześćdziesiąt|Sixty|六十
+数字|Siedemdziesiąt|Seventy|七十
+数字|Osiemdziesiąt|Eighty|八十
+数字|Dziewięćdziesiąt|Ninety|九十
+数字|Sto|One hundred|一百
+颜色|Biały|White (masculine form)|白色（阳性形式）
+颜色|Czarny|Black (masculine form)|黑色（阳性形式）
+颜色|Czerwony|Red (masculine form)|红色（阳性形式）
+颜色|Niebieski|Blue (masculine form)|蓝色（阳性形式）
+颜色|Zielony|Green (masculine form)|绿色（阳性形式）
+颜色|Żółty|Yellow (masculine form)|黄色（阳性形式）
+颜色|Pomarańczowy|Orange (masculine form)|橙色（阳性形式）
+颜色|Różowy|Pink (masculine form)|粉色（阳性形式）
+颜色|Fioletowy|Purple (masculine form)|紫色（阳性形式）
+颜色|Brązowy|Brown (masculine form)|棕色（阳性形式）
+颜色|Szary|Gray (masculine form)|灰色（阳性形式）
+颜色|Beżowy|Beige (masculine form)|米色（阳性形式）
+颜色|Złoty|Gold (masculine form)|金色（阳性形式）
+颜色|Srebrny|Silver (masculine form)|银色（阳性形式）
+生活基础|Pogoda|Weather|天气
+生活基础|Słońce|Sun|太阳
+生活基础|Deszcz|Rain|雨
+生活基础|Śnieg|Snow|雪
+生活基础|Wiatr|Wind|风
+生活基础|Chmura|Cloud|云
+生活基础|Niebo|Sky|天空
+生活基础|Głowa|Head|头
+生活基础|Oko|Eye|眼睛
+生活基础|Ucho|Ear|耳朵
+生活基础|Nos|Nose|鼻子
+生活基础|Usta|Mouth|嘴
+生活基础|Ręka|Hand / Arm|手 / 手臂
+生活基础|Noga|Leg|腿
+生活基础|Stopa|Foot|脚
+生活基础|Serce|Heart|心脏
+生活基础|Stół|Table|桌子
+生活基础|Krzesło|Chair|椅子
+生活基础|Łóżko|Bed|床
+生活基础|Drzwi|Door|门
+生活基础|Okno|Window|窗户
+生活基础|Telefon|Phone|电话
+生活基础|Książka|Book|书
+生活基础|Klucz|Key|钥匙
+生活基础|Torba|Bag|包
+生活基础|Zegar|Clock|钟`.trim();
 const WORDS=V.split('\n').map((s,i)=>{const [pl,en,zh]=s.split('|');return {id:i+1,pl,en,zh,kind:'word'}});
+const EXTRAS=EXTRA.split('\n').map((s,i)=>{const [category,pl,en,zh]=s.split('|');return {id:WORDS.length+i+1,pl,en,zh,kind:'word',category}});
+WORDS.push(...EXTRAS);
 const PHRASES=P.split('\n').map((s,i)=>{const [pl,en,zh]=s.split('|');return {id:i+1,pl,en,zh,kind:'phrase'}});
